@@ -1,21 +1,18 @@
 import {
-  Routes,
-  Route,
-  useParams,
+  Routes, Route,
 } from "react-router-dom";
 
 import { Container } from "@chakra-ui/react";
 
 import { Header } from "./components/Header";
 
+import { Employees, } from "./components/Employees";
 
-const Employees = () => {
-  const { topicId } = useParams();
-  return  (<h1>Employee: {topicId} </h1>);
-}
+
 const URLError = () => {
   return  (<h1>URL Error (Path doesn't exist)</h1>);
 }
+
 
 function App() {
 
@@ -28,7 +25,7 @@ function App() {
         <Route  path="*" 
                 element={<URLError />} />
 
-        <Route  path="/employees/:topicId" 
+        <Route  path="/employees/:employeeID" 
                 element={<Employees />} />
       </Routes>
       
