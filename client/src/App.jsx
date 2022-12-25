@@ -1,16 +1,15 @@
-import {
-  Routes, Route,
-} from "react-router-dom";
+import { Routes, Route, useLocation, } from "react-router-dom";
 
 import { Container } from "@chakra-ui/react";
-
 import { Header } from "./components/Header";
 
 import { Employees, } from "./components/Employees";
 
 
 const URLError = () => {
-  return  (<h1>URL Error (Path doesn't exist)</h1>);
+  const { pathname } = useLocation();
+  console.log("URL Error (Path %s doesn't exist", pathname);
+  return  (<h1>URL Error (Path {pathname} doesn't exist)</h1>);
 }
 
 
@@ -20,14 +19,16 @@ function App() {
     <>
       <Header />
       <Container pt="6" maxW="container.md">
-      </Container>
-      <Routes>
-        <Route  path="*" 
-                element={<URLError />} />
+      
+        <Routes>
+          <Route  path="*" 
+                  element={<URLError />} />
+          <Route  path="/employees/:employeeID" 
+                  element={<Employees />} />
+        </Routes>
 
-        <Route  path="/employees/:employeeID" 
-                element={<Employees />} />
-      </Routes>
+      </Container>
+     
       
     </>
   );
