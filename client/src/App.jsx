@@ -17,19 +17,15 @@ function App() {
 
   return ( 
     <>
+    <Container centerContent>
       <Header />
-      <Container pt="6" maxW="container.md">
-      
-        <Routes>
-          <Route  path="*" 
-                  element={<URLError />} />
-          <Route  path="/employees/:employeeID" 
-                  element={<Employees />} />
-        </Routes>
-
-      </Container>
-     
-      
+      <Routes>
+        <Route  path="*" 
+                element={<URLError />} />
+        <Route  path="/employees/:employeeID" 
+                element={<Employees />} />
+      </Routes>
+    </Container>
     </>
   );
 }

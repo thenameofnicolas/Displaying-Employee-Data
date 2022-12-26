@@ -3,10 +3,8 @@ import { useEmployeeData } from "./repository";
 
 export const  Employees = () => {
     const { employeeID } = useParams();
-    console.log("EmployeeID: ",  employeeID);
-    const res = useEmployeeData(employeeID);
-    return  (<h1>EmployeesID: {employeeID} </h1>);
-
+    console.log("looking for EmployeeID ",  employeeID);
+    return useEmployeeData(employeeID);
   };
 
   

@@ -10,7 +10,7 @@ export function Header() {
       align="center"
       spacing={8}
       boxShadow="md"
-      p={2}
+      p={5}
       w="100vw"
     >
       <SongRiverLogo size="5xl" />
